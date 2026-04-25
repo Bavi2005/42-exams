@@ -51,6 +51,7 @@ int	main(int argc, char **argv)
 		}
 		i += ret;
 	}
+	line[i] = '\0';
 	ft_filter(line, argv[1]);
 	return (0);
 }
