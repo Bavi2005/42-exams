@@ -1,0 +1,77 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build-all",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 broken_gnl.c main.c -o gnl_broken && cd ../repaired_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 get_next_line.c main.c -o gnl_repaired && cd ../../filter && gcc -Wall -Wextra -Werror filter.c -o filter && cd ../scanf && gcc -Wall -Wextra -Werror ft_scanf.c main.c -o ft_scanf && cd ../../level2/n_queens && gcc -Wall -Wextra -Werror n_queens.c -o n_queens && cd ../permutations && gcc -Wall -Wextra -Werror permutations.c -o permutations && cd ../powerset && gcc -Wall -Wextra -Werror powerset.c -o powerset && cd ../rip && gcc -Wall -Wextra -Werror rip.c -o rip && cd ../tsp && gcc -Wall -Wextra -Werror tsp.c -lm -o tsp",
+			"isBackground": false
+		},
+		{
+			"label": "build-all",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 broken_gnl.c main.c -o gnl_broken && cd ../repaired_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 get_next_line.c main.c -o gnl_repaired && cd ../../filter && gcc -Wall -Wextra -Werror filter.c -o filter && cd ../scanf && gcc -Wall -Wextra -Werror ft_scanf.c main.c -o ft_scanf && cd ../../level2/n_queens && gcc -Wall -Wextra -Werror n_queens.c -o n_queens && cd ../permutations && gcc -Wall -Wextra -Werror permutations.c -o permutations && cd ../powerset && gcc -Wall -Wextra -Werror powerset.c -o powerset && cd ../rip && gcc -Wall -Wextra -Werror rip.c -o rip && cd ../tsp && gcc -Wall -Wextra -Werror tsp.c -lm -o tsp",
+			"isBackground": false
+		},
+		{
+			"label": "build-all",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 broken_gnl.c main.c -o gnl_broken && cd ../repaired_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 get_next_line.c main.c -o gnl_repaired && cd ../../filter && gcc -Wall -Wextra -Werror filter.c -o filter && cd ../scanf && gcc -Wall -Wextra -Werror ft_scanf.c main.c -o ft_scanf && cd ../../level2/n_queens && gcc -Wall -Wextra -Werror n_queens.c -o n_queens && cd ../permutations && gcc -Wall -Wextra -Werror permutations.c -o permutations && cd ../powerset && gcc -Wall -Wextra -Werror powerset.c -o powerset && cd ../rip && gcc -Wall -Wextra -Werror rip.c -o rip && cd ../tsp && gcc -Wall -Wextra -Werror tsp.c -lm -o tsp",
+			"isBackground": false
+		},
+		{
+			"label": "build-all",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 broken_gnl.c main.c -o gnl_broken && cd ../repaired_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 get_next_line.c main.c -o gnl_repaired && cd ../../filter && gcc -Wall -Wextra -Werror filter.c -o filter && cd ../scanf && gcc -Wall -Wextra -Werror ft_scanf.c main.c -o ft_scanf && cd ../../level2/n_queens && gcc -Wall -Wextra -Werror n_queens.c -o n_queens && cd ../permutations && gcc -Wall -Wextra -Werror permutations.c -o permutations && cd ../powerset && gcc -Wall -Wextra -Werror powerset.c -o powerset && cd ../rip && gcc -Wall -Wextra -Werror rip.c -o rip && cd ../tsp && gcc -Wall -Wextra -Werror tsp.c -lm -o tsp",
+			"isBackground": false
+		},
+		{
+			"label": "test-all",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && printf \"a\\nb\\n\" | ./gnl_broken && cd ../repaired_gnl && printf \"a\\nb\\n\" | ./gnl_repaired && cd ../../filter && printf \"abcdefaaaabcdeabcabcdabc\\n\" | ./filter abc && cd ../scanf && printf \"hi 42 z\\n\" | ./ft_scanf && cd ../../level2/n_queens && ./n_queens 4 && cd ../permutations && ./permutations abc && cd ../powerset && ./powerset 3 1 0 2 4 5 3 && cd ../rip && ./rip '()())()' && cd ../tsp && printf \"0, 0\\n1, 0\\n0, 1\\n1, 1\\n\" | ./tsp",
+			"isBackground": false
+		},
+		{
+			"label": "build-all",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 broken_gnl.c main.c -o gnl_broken && cd ../repaired_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 get_next_line.c main.c -o gnl_repaired && cd ../../filter && gcc -Wall -Wextra -Werror filter.c -o filter && cd ../scanf && gcc -Wall -Wextra -Werror ft_scanf.c main.c -o ft_scanf",
+			"isBackground": false
+		},
+		{
+			"label": "build-level1",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 broken_gnl.c main.c -o gnl_broken && cd ../repaired_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 get_next_line.c main.c -o gnl_repaired && cd ../../filter && gcc -Wall -Wextra -Werror filter.c -o filter && cd ../scanf && gcc -Wall -Wextra -Werror ft_scanf.c main.c -o ft_scanf",
+			"isBackground": false
+		},
+		{
+			"label": "test-level1",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && printf \"a\\nb\\n\" | ./gnl_broken && cd ../repaired_gnl && printf \"a\\nb\\n\" | ./gnl_repaired && cd ../../filter && printf \"abcdefaaaabcdeabcabcdabc\\n\" | ./filter abc && cd ../scanf && printf \"hi 42 z\\n\" | ./ft_scanf",
+			"isBackground": false
+		},
+		{
+			"label": "test-all-edge",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && printf \"GNL_BROKEN empty:\\n\" && printf \"\" | ./gnl_broken && echo && printf \"GNL_BROKEN no-nl:\\n\" && printf \"x\" | ./gnl_broken && echo && printf \"GNL_BROKEN multi:\\n\" && printf \"a\\nb\\nc\" | ./gnl_broken && echo && cd ../repaired_gnl && printf \"GNL_REPAIRED empty:\\n\" && printf \"\" | ./gnl_repaired && echo && printf \"GNL_REPAIRED no-nl:\\n\" && printf \"x\" | ./gnl_repaired && echo && printf \"GNL_REPAIRED multi:\\n\" && printf \"a\\nb\\nc\" | ./gnl_repaired && echo && cd ../../filter && printf \"FILTER nomatch:\\n\" && printf \"hello\\n\" | ./filter abc && echo && printf \"FILTER multi:\\n\" && printf \"abcdefaaaabcdeabcabcdabc\\n\" | ./filter abc && echo && cd ../scanf && printf \"SCANF basic:\\n\" && printf \"hi 42 z\\n\" | ./ft_scanf && printf \"SCANF spaces+sign:\\n\" && printf \"  wow -7 k\\n\" | ./ft_scanf && cd ../../level2/n_queens && printf \"N_QUEENS 1:\\n\" && ./n_queens 1 && printf \"N_QUEENS 2 (expect empty):\\n\" && ./n_queens 2 && cd ../permutations && printf \"PERM a:\\n\" && ./permutations a && printf \"PERM ab:\\n\" && ./permutations ab && cd ../powerset && printf \"POWERSET target 0:\\n\" && ./powerset 0 1 -1 && cd ../rip && printf \"RIP sample:\\n\" && ./rip '()())()' && cd ../tsp && printf \"TSP square:\\n\" && printf \"0, 0\\n1, 0\\n0, 1\\n1, 1\\n\" | ./tsp",
+			"isBackground": false
+		},
+		{
+			"label": "build-level1",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 broken_gnl.c main.c -o gnl_broken && cd ../repaired_gnl && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 get_next_line.c main.c -o gnl_repaired && cd ../../filter && gcc -Wall -Wextra -Werror filter.c -o filter && cd ../scanf && gcc -Wall -Wextra -Werror ft_scanf.c main.c -o ft_scanf",
+			"isBackground": false
+		},
+		{
+			"label": "test-level1-edge",
+			"type": "shell",
+			"command": "cd level1/broken_gnl/broken_gnl && printf \"GNL_BROKEN no-nl:\\n\" && printf \"x\" | ./gnl_broken | cat -e && echo && printf \"GNL_BROKEN multi:\\n\" && printf \"a\\nb\\nc\" | ./gnl_broken | cat -e && echo && cd ../repaired_gnl && printf \"GNL_REPAIRED no-nl:\\n\" && printf \"x\" | ./gnl_repaired | cat -e && echo && printf \"GNL_REPAIRED multi:\\n\" && printf \"a\\nb\\nc\" | ./gnl_repaired | cat -e && echo && cd ../../filter && printf \"FILTER nomatch:\\n\" && printf \"hello\\n\" | ./filter abc | cat -e && echo && printf \"FILTER multi:\\n\" && printf \"abcdefaaaabcdeabcabcdabc\\n\" | ./filter abc | cat -e && echo && cd ../scanf && printf \"SCANF basic:\\n\" && printf \"hi 42 z\\n\" | ./ft_scanf && printf \"SCANF spaces+sign:\\n\" && printf \"  wow -7 k\\n\" | ./ft_scanf",
+			"isBackground": false
+		},
+		{
+			"label": "test-level2",
+			"type": "shell",
+			"command": "cd level2/n_queens && printf \"N_QUEENS 1:\\n\" && ./n_queens 1 && printf \"N_QUEENS 2 (expect empty):\\n\" && ./n_queens 2 && cd ../permutations && printf \"PERM a:\\n\" && ./permutations a && printf \"PERM ab:\\n\" && ./permutations ab && cd ../powerset && printf \"POWERSET target 0:\\n\" && ./powerset 0 1 -1 && cd ../rip && printf \"RIP sample:\\n\" && ./rip '()())()' && cd ../tsp && printf \"TSP square:\\n\" && printf \"0, 0\\n1, 0\\n0, 1\\n1, 1\\n\" | ./tsp",
+			"isBackground": false
+		}
+	]
+}

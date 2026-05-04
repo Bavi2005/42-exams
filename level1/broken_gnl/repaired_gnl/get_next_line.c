@@ -1,66 +1,50 @@
 #include "get_next_line.h"
 
-static size_t	ft_strlen(char *s)
-{
-	size_t i = 0;
-	while (s[i]) i++;
-	return i;
-}
-
-static char	*ft_strchr(char *s, char c)
-{
-	while (*s && *s != c) s++;
-	return (*s == c ? s : NULL);
-}
-
-/* append n bytes of src to *dst (malloc'd); frees old *dst */
-static int	append_n(char **dst, char *src, size_t n)
-{
-	size_t	l = *dst ? ft_strlen(*dst) : 0;
-	char	*tmp = malloc(l + n + 1);
-	size_t	i;
-
-	if (!tmp) return 0;
-	i = 0; while (i < l) { tmp[i] = (*dst)[i]; i++; }
-	i = 0; while (i < n) { tmp[l + i] = src[i]; i++; }
-	tmp[l + n] = '\0';
-	free(*dst);
-	*dst = tmp;
-	return 1;
-}
+static size_t	slen(char *s){size_t i=0;while(s&&s[i])i++;return i;}
+static char	*schr(char *s,char c){while(s&&*s&&*s!=c)s++;return s&&*s==c?s:0;}
+static char	*ret0(char *p){free(p);return 0;}
+static int	app(char **d,char *s,size_t n){size_t l=slen(*d),i;char *t=malloc(l+n+1);
+	if(!t)return 0;
+	for(i=0;i<l;i++)t[i]=(*d)[i];
+	for(i=0;i<n;i++)t[l+i]=s[i];
+	t[l+n]=0;free(*d);*d=t;return 1;}
 
 char	*get_next_line(int fd)
 {
-	static char	buf[BUFFER_SIZE + 1] = "";
-	char		*ret = NULL;
-	char		*nl;
-	int			r;
-	size_t		len;
-	size_t		i;
-
-	nl = ft_strchr(buf, '\n');
-	while (!nl)
-	{
-		if (!append_n(&ret, buf, ft_strlen(buf)))
-			return (free(ret), NULL);
-		buf[0] = '\0';
-		r = read(fd, buf, BUFFER_SIZE);
-		if (r < 0)
-			return (free(ret), NULL);
-		if (r == 0)
-			break ;
-		buf[r] = '\0';
-		nl = ft_strchr(buf, '\n');
-	}
-	if (nl)
-	{
-		if (!append_n(&ret, buf, nl - buf + 1))
-			return (free(ret), NULL);
-		len = ft_strlen(nl + 1);
-		i = 0;
-		while (i <= len) { buf[i] = nl[1 + i]; i++; }
-	}
-	else if (!ret || !*ret)
-		return (free(ret), NULL);
-	return ret;
+	static char	b[BUFFER_SIZE + 1];
+	char		*r=0,*nl;int rd;size_t i,l;
+	while(!(nl=schr(b,'\n'))){
+		if(!app(&r,b,slen(b)))return ret0(r);
+		rd=read(fd,b,BUFFER_SIZE);
+		if(rd<0)return ret0(r);
+		if(!rd){b[0]=0;break;}
+		b[rd]=0;}
+	if(nl){if(!app(&r,b,nl-b+1))return ret0(r);
+		l=slen(nl+1);for(i=0;i<=l;i++)b[i]=nl[1+i];}
+	else if(!r||!*r)return ret0(r);
+	return r;
 }
+
+/*
+Line 1: This lets us use the header and BUFFER_SIZE.
+Line 3: ft_strlen counts characters and handles NULL.
+Line 9: ft_strchr finds the first '\n'.
+Line 16: append makes a bigger string and frees the old one.
+Line 30: get_next_line returns one line each call.
+Line 32: b keeps leftover bytes between calls.
+Line 33: r is the line we build.
+Line 34: nl points to a '\n' if it exists.
+Line 35: rd is the read byte count.
+Line 36: i and l help with loops.
+Line 38: Read until we see a newline or reach EOF.
+Line 40: Add current buffer into r.
+Line 42: Read more bytes from the file.
+Line 44: If read fails, free and return NULL.
+Line 46: If read returns 0, we hit EOF.
+Line 48: Add '\0' to end the buffer string.
+Line 50: If we found a newline, append through it.
+Line 52: If append fails, free and return NULL.
+Line 54: Move leftover bytes after the newline into b.
+Line 57: If no data left, return NULL.
+Line 59: Return the built line to the caller.
+*/
